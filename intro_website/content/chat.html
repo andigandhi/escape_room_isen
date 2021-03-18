@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>.</title>
+	<link rel="stylesheet" href="../css/style2.css">
+</head>
+
+<body style="overflow-y: auto;">
+	<div id="inhaltDiv">
+
+	</div>
+	
+	<script>
+	    pw = window.prompt("Für diesen Bereich ist ein Passwort notwendig", "Passwort");
+	    if (pw === "1312") {
+	        var mail = getCookie("maili");
+	        if (mail == "") {
+	            mail = window.prompt("Du hast noch keine E-Mail Adresse angegeben! Es wird dringend empfohlen, zur Sicherheit eine Adresse zu hinterlegen. Wichtige Benachrichtigungen werden an diese Adresse gesendet. Die Adresse wird nicht an Dritte weitergegeben.", "deine@mail.adresse");
+	            setCookie("maili", mail, 30);
+	            document.getElementById("inhaltDiv").innerHTML = "Die Adresse " + mail + " wurde im System hinterlegt. Du bekommst wichtige Nachrichten jetzt per Email.";
+	        }
+	        document.getElementById("inhaltDiv").innerHTML += '<iframe src="chatinhalt.html" width="800px" height="350px">';
+	        document.getElementById("inhaltDiv").innerHTML += 'Es wurden Unregelmäßigkeiten festgestellt. Der Chat Modus wurde vorübergehend deaktiviert.';
+	    } else {
+	        document.getElementById("inhaltDiv").innerHTML = "Falsches Passwort";
+	    }
+	    
+	    
+	    
+	    
+	    function getCookie(cname) {
+          var name = cname + "=";
+          var decodedCookie = decodeURIComponent(document.cookie);
+          var ca = decodedCookie.split(';');
+          for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+        }
+        
+        function setCookie(cname, cvalue, exdays) {
+          var d = new Date();
+          d.setTime(d.getTime() + (exdays*24*60*60*1000));
+          var expires = "expires="+ d.toUTCString();
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+	</script>
+</body>
+</html>

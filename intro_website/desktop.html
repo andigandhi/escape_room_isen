@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://unpkg.com/7.css" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>PC des Verdächtigen</title>
+</head>
+	
+<body onResize="positionTaskbar()">
+	
+	<!-- Creates the Taskbar -->
+	<div class="window" id="taskbar">
+	</div>
+	
+	
+	<script>
+		function positionTaskbar() {
+			var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; 
+			document.getElementById("taskbar").style.marginTop = (h - 50)+"px";
+		}
+		
+		positionTaskbar();
+	</script>
+	
+	<!-- Script to add the move listener to the window divs -->
+	<script src="js/divMove.js"></script>
+	
+	<!-- Loads the different window divs and the menu -->
+	<script src="js/siteLoader.js"></script>
+
+</body>
+</html>

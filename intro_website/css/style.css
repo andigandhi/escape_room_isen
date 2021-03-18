@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background-image: url("../img/bg.png");
+	background-color: #000;
+	
+	background-attachment: fixed;
+	
+	color: #FFF;
+	font-size: 130%;
+}
+
+.centered {
+  position: relative;
+  margin-left: 160px;
+  margin-top: -75px;
+  margin-bottom: 10px;
+  background-color: rgba(0,0,0,0.92)
+}
+
+.cursed {
+  position: absolute;
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
+}
+
+.hrDiv {
+  width: 900px;
+}
+
+topbox {
+  	height: 100px;
+  	margin: 10px;
+	text-align: center;
+	color: #0F0;
+}
+
+rahmen {
+	position: absolute;
+	width: 915px;
+	left: 50%;
+	margin-left: -450px;
+}
+
+div1 {
+  	width: 290px;
+  	height: 290px;
+  	margin: 10px;
+	margin-left: 0px;
+	display: inline-block;
+}
+
+div1-big {
+  	width: 900px;
+  	height: 290px;
+  	margin: 10px;
+	margin-left: 0px;
+	display: inline-block;
+}
+
+a { text-decoration : none; color : #FFF; }
+
+hr {border: 1px solid #AAA;}
+
+.no-js #loader { display: none;  }
+
+.loaded #loader {
+    opacity: 0;
+}
+
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../img/load.gif) center no-repeat #000;
+}
+
+img {
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(0.8); /* Google Chrome, Safari 6+ & Opera 15+ */
+  filter: grayscale(0.8); /* Microsoft Edge and Firefox 35+ */
+}
